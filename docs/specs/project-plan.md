@@ -67,11 +67,11 @@ Sydney Lalah and Lily MacInnis handle frontend work. Sydney also helps with the 
 
 Sydney and Kamilla work together on Challenge pages and saved progress. Lily and Denzel work together on the editor and terminal. The backend teammates coordinate with Diab to connect everything to the simulation. Kamilla leads database work, with help from Sydney.
 
-Everyone tests and documents their own work. We track tasks in Jira, with one owner and another teammate reviewing each task. RF hardware work comes later.
+Everyone tests and documents their own work. We track tasks in the Knight Sat Sim (KSAT) Jira project, with one accountable owner per task. Request a non-author teammate's review when a pull request is ready; do not preassign a fixed reviewer. For external setup without a PR, another teammate verifies the recorded result when ready. RF hardware work comes later.
 
 ## How we’ll build it
 
-The repository is a scaffold, not the implemented product. The implementation defaults are agreed; use this dependency order for Jira tasks:
+The repository is a scaffold, not the implemented product. The implementation defaults are agreed; use these delivery stages for Jira tasks. Track actual implementation prerequisites with Jira blocking links; the Player's unlock order does not prevent development with isolated persisted-completion fixtures.
 
 1. **Shared foundation:** packet encoder/decoder and Software Link; FastAPI models, SQLite migrations/completion, ownership and event snapshots; React shell/shared controls/generated types. Use the contracts below without choosing new frameworks.
 2. **Workspace and Hello:** isolated runtime, terminal/editor/files and prepared PING tool; complete the real browser → helper → Sim/Link → saved completion journey. Prove cleanup, access isolation and stale-save handling at this boundary.
@@ -79,7 +79,9 @@ The repository is a scaffold, not the implemented product. The implementation de
 4. **Catch and Log:** receive stream, Python starter/decoder, pass start, saved recording/log and evidence checks; prove repeat, interruption and persistence behavior.
 5. **Shared hosted demo:** implement Access-gated deployment alongside the feature work; verify all three activities at the team URL and have a newcomer complete them.
 
-Put the agreed baseline in the official repository, `kamillamamatova/knight-sat-sim`, before teammates build from it. Build tickets have one owner, one reviewer, dependencies and observable acceptance checks. Dates and task status belong in Jira. PSB procedure research can proceed separately; unverified real-station instructions do not block the simulated MVP.
+The agreed baseline was published to the official repository, `kamillamamatova/knight-sat-sim`, at [c7e742a](https://github.com/kamillamamatova/knight-sat-sim/commit/c7e742a0b663a97694f5691bf1a3773fdca3ba07). KSAT-5 also requires a teammate's fresh-clone/startup verification; publication alone does not establish that result.
+
+Use one shared backlog and a weekly plan-and-demo routine. Keep the four epics for foundation, Workspace, Challenges and hosting; use area labels to find UI, server, simulation, hosting and documentation work. Build tickets have a practical starting point, one owner, true prerequisites, an explicit handoff and observable acceptance checks. Split independently deliverable behaviors while keeping their required failure handling and tests together. The [contribution rules](../../CONTRIBUTING.md#planning-and-board) own the board workflow, ticket format and review procedure. Dates and task status belong in Jira. PSB procedure research can proceed separately; unverified real-station instructions do not block the simulated MVP.
 
 ## Completion checks
 
@@ -124,4 +126,4 @@ The [glossary](../glossary.md) defines shared terms, and [Contributing](../../CO
 
 The requirements and implementation defaults in the linked specs are agreed. Record changes in the owning spec; do not add ADRs or duplicate explanations. Package versions belong in lockfiles, running/setup instructions in README, and task status/dates in Jira. Use this plan as the reading map and the individual specs for contracts and acceptance behavior.
 
-External setup still needs a shared official-repo baseline, Azure credit verification or an approved fallback budget, the domain and approved-email list. Shared setup can proceed alongside implementation. Runtime sizing and hosted access must be proven before the shared demo. Checked PSB source material and [later station lesson design](ground-station-training.md#work-still-to-specify) remain separate follow-on work.
+External setup still needs teammate verification of the published baseline, Azure credit verification or an approved fallback budget, the domain and approved-email list. Shared setup can proceed alongside implementation. Runtime sizing and hosted access must be proven before the shared demo. Checked PSB source material and [later station lesson design](ground-station-training.md#work-still-to-specify) remain separate follow-on work.
